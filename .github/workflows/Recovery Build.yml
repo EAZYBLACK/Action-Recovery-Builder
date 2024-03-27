@@ -95,7 +95,7 @@ jobs:
       id: buildtree
       with:
         cond: ${{ inputs.MANIFEST_BRANCH == '11' || inputs.MANIFEST_BRANCH == '12.1' }}
-        if_true: aosp
+        if_true: omni
         if_false: omni
 
     - name: Install OpenJDK
