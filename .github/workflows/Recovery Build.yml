@@ -6,7 +6,7 @@ on:
       MANIFEST_BRANCH:
         description: Manifest Branch
         required: true
-        default: v3_9.0
+        default: shrp-12.1
       DEVICE_TREE_URL:
         description: Device Tree URL
         required: true
@@ -14,7 +14,7 @@ on:
       DEVICE_TREE_BRANCH:
         description: Device Tree Branch
         required: true
-        default: android-9.0
+        default: android-12.1
       DEVICE_PATH:
         description: Path the device tree should be synced to, relative to source root
         required: true
@@ -22,7 +22,7 @@ on:
       DEVICE_MAKEFILE:
         description: 'Name of device-specific makefile from tree (format: <PREFIX>_<DEVICE_NAME>)'
         required: true
-        default: omni_d2x
+        default: twrp_d2x
       BUILD_TARGET:
         type: choice
         description: Partition containing recovery ramdisk
@@ -99,7 +99,7 @@ jobs:
         cd workspace
         git config --global user.name "${GITHUB_ACTOR}"
         git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
-        repo init --depth=1 -u https://github.com/SHRP/manifest.git -b ${{ inputs.MANIFEST_BRANCH }}
+        repo init --depth=1 -u https://github.com/SHRP-reborn/manifest.git -b ${{ inputs.MANIFEST_BRANCH }}
           
     - name: Repo Sync
       run: |
